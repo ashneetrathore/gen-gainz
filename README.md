@@ -25,7 +25,7 @@ The frontend is built with **React + Next.js** and **CSS**, where page-level com
 
 ## :open_file_folder: PROJECT FILE STRUCTURE
 ```bash
-GenGainz/
+gen-gainz/
 ├── aws_lambda/         
 │   └── workout_lambda.py          # Contains original AWS Lambda function (for reference purposes)
 ├── src/        
