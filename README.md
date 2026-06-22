@@ -18,8 +18,8 @@ GenGainz is a full-stack AI-powered web application that generates personalized 
 The backend is implemented in **Python** and runs entirely on **AWS Lambda**, and the frontend is built with **React + Next.js** and **CSS**. **AWS Amplify** was used for deployment and integration with AWS backend services.
 
 Flow of a workout plan generation request:
-- The user submits a form with demographic info and fitness preferences via the **React + Next.js** frontend
-- The request triggers the **AWS Lambda** function, which calls the **ExerciseDB API** from RapidAPI to fetch relevant exercises
+- The user submits a form with demographic info and fitness preferences via the React + Next.js frontend
+- The request triggers the AWS Lambda function, which calls the **ExerciseDB API** from RapidAPI to fetch relevant exercises
 - Lambda constructs a prompt from the user input and fetched exercises, and sends it to **Amazon Bedrock**
 - **Claude Sonnet** generates a personalized workout plan, which Lambda returns to the frontend for display 
 
