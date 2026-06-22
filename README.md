@@ -4,43 +4,43 @@
 Date: May 2025\
 Developer(s): Ashneet Rathore, Josephine Ligatsyah, Allison Yeh
 
-GenGainz is a full-stack AI-powered web application that creates personalized workout routines based on user demographics and fitness preferences. The app leverages AWS services and was developed in a four-day span as a submission for the AWS CloudHacks hackathon hosted at UCI.
+GenGainz is a full-stack AI-powered web application that generates personalized workout routines based on user demographics (height, weight, age, etc.) and fitness preferences such as workout duration and targeted body groups. The app uses AWS services and was developed in a four-day span as a submission for the AWS CloudHacks hackathon hosted at UCI.
 
-**Tech Stack** | Python, AWS Lambda, ExerciseDB API, Amazon Bedrock, React, Next.js (JavaScript), CSS, AWS Amplify
-
-View more of my full-stack apps on GitHub [here](https://github.com/stars/ashneetrathore/lists/full-stack)
+**Tech Stack** | Python, AWS Lambda, ExerciseDB API, Amazon Bedrock, React, Next.js, CSS, AWS Amplify
 
 ## :film_strip: DEMO
 [Watch the demo on Youtube](https://youtu.be/xo7eef4Pw6g)
 
 ## :classical_building: ARCHITECTURE
 > [!IMPORTANT]
-> The AWS services for this project are no longer active, so the app cannot run live. The file `workout_lambda.py` is included in the repo for reference. In production, this code runs as a Lambda function hosted on AWS.
+> The AWS services for this project are no longer active. `workout_lambda.py` is included for reference. In production, it runs as a Lambda function hosted on AWS.
 
-The backend logic is implemented in **Python** and runs entirely within **AWS Lambda**. When the user submits the form to generate a workout plan, the browser sends a request that triggers the Lambda function. In turn, Lambda responds to confirm that the request is allowed. Once the form data is received, Lambda calls the **ExerciseDB API** from RapidAPI to fetch relevant exercises and constructs a prompt based on both the user's input and the retrieved exercises. The prompt is then sent to **Amazon Bedrock**, where the **Claude Sonnet LLM** generates a personalized workout routine. Finally, the workout plan is returned from the Lambda function to the frontend for display.
+The backend is implemented in **Python** and runs entirely on **AWS Lambda**, and the frontend is built with **React + Next.js** and **CSS**. **AWS Amplify** was used for deployment and integration with AWS backend services.
 
-The frontend is built with **React + Next.js** and **CSS**, where page-level components handle user input and display generated workout plans. User input includes demographic information (height, weight, sex, age), along with their fitness preferences such as workout duration and targeted body groups. 
-
-**AWS Amplify** was used for deployment and integration with AWS backend services. During Amplify setup, GitHub was selected as the app's source and environment variables were configured directly in the Amplify console to securely manage API keys and backend URLs.
+Flow of a workout plan generation request:
+- The user submits a form with demographic info and fitness preferences via the **React + Next.js** frontend
+- The request triggers the **AWS Lambda** function, which calls the **ExerciseDB API** from RapidAPI to fetch relevant exercises
+- Lambda constructs a prompt from the user input and fetched exercises, and sends it to **Amazon Bedrock**
+- **Claude Sonnet** generates a personalized workout plan, which Lambda returns to the frontend for display 
 
 ## :open_file_folder: PROJECT FILE STRUCTURE
 ```bash
 gen-gainz/
 ├── aws_lambda/         
-│   └── workout_lambda.py          # Contains original AWS Lambda function (for reference purposes)
+│   └── workout_lambda.py          # Original AWS Lambda function (for reference purposes)
 ├── src/        
 │   └── app/
-│       ├── styles/                # Contains CSS files for frontend        
+│       ├── styles/                # Frontend CSS styles       
 │       ├── workout/               
-│       │   └── page.js            # Renders the returned workout plan to the user
-│       ├── layout.js              # Defines the layout structure for pages
-│       └── page.js                # Renders the main app page and collects user input 
-├── public/                        # Stores static logos and icons
-├── package.json                   # Contains external dependencies
-├── package-lock.json              # Contains external dependencies
-├── jsconfig.json                  # Contains configuration settings
-├── next.config.mjs                # Contains configuration settings
-├── postcss.config.mjs             # Contains configuration settings
+│       │   └── page.js            # Workout play display page
+│       ├── layout.js              # Page layout structure
+│       └── page.js                # Main app page and user input form 
+├── public/                        # Static logos and icons
+├── package.json                   # External dependencies
+├── package-lock.json              # Locked dependency versions
+├── jsconfig.json                  # JS config
+├── next.config.mjs                # Next.js config
+├── postcss.config.mjs             # PostCSS config
 ├── README.md                      # Project documentation
-└── .gitignore                     # Excludes files and folders from version control
+└── .gitignore                     # Ignored files
 ```
