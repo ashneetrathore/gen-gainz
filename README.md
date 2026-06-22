@@ -4,7 +4,7 @@
 Date: May 2025\
 Developer(s): Ashneet Rathore, Josephine Ligatsyah, Allison Yeh
 
-GenGainz is a full-stack AI-powered web application that generates personalized workout routines based on user demographics (height, weight, age, etc.) and fitness preferences such as workout duration and targeted body groups. The app uses AWS services and was developed in a four-day span as a submission for the AWS CloudHacks hackathon hosted at UCI.
+GenGainz is a full-stack AI-powered web application that generates personalized workout routines based on user demographics, such as height and age, and fitness preferences, such as workout duration and targeted body groups. The app uses AWS services and was developed in a four-day span as a submission for the AWS CloudHacks hackathon hosted at UCI.
 
 **Tech Stack** | Python, AWS Lambda, ExerciseDB API, Amazon Bedrock, React, Next.js, CSS, AWS Amplify
 
