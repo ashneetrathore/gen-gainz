@@ -1,12 +1,12 @@
-# :muscle: GENGAINZ
+# :muscle: GEN GAINZ
 
 ## :open_book: OVERVIEW
 Date: May 2025\
 Developer(s): Ashneet Rathore, Josephine Ligatsyah, Allison Yeh
 
-GenGainz is a full-stack AI-powered web application that generates personalized workout routines based on user demographics, such as height and age, and fitness preferences, such as workout duration and targeted body groups. The app uses AWS services and was developed in a four-day span as a submission for the AWS CloudHacks hackathon hosted at UCI.
+Gen Gainz is a full-stack AI-powered web application that generates personalized workout routines based on user demographics, such as height and age, and fitness preferences, such as workout duration and targeted body groups. The app uses AWS services and was developed in a four-day span as a submission for the AWS CloudHacks hackathon hosted at UCI.
 
-**Tech Stack** | Python, AWS Lambda, ExerciseDB API, Amazon Bedrock, React, Next.js, CSS, AWS Amplify
+**Tech Stack** | Python, AWS Lambda, ExerciseDB API, React, Next.js, CSS, Amazon Bedrock, AWS Amplify
 
 ## :film_strip: DEMO
 [Watch the demo on Youtube](https://youtu.be/xo7eef4Pw6g)
@@ -15,13 +15,13 @@ GenGainz is a full-stack AI-powered web application that generates personalized 
 > [!IMPORTANT]
 > The AWS services for this project are no longer active. `workout_lambda.py` is included for reference. In production, it runs as a Lambda function hosted on AWS.
 
-The backend is implemented in **Python** and runs entirely on **AWS Lambda**, and the frontend is built with **React + Next.js** and **CSS**. **AWS Amplify** was used for deployment and integration with AWS backend services.
+The backend is implemented in Python and runs entirely on AWS Lambda, and the frontend is built with React + Next.js and CSS. AWS Amplify was used for deployment and integration with AWS backend services.
 
 Flow of a workout plan generation request:
 - The user submits a form with demographic info and fitness preferences via the React + Next.js frontend
-- The request triggers the AWS Lambda function, which calls the **ExerciseDB API** from RapidAPI to fetch relevant exercises
-- Lambda constructs a prompt from the user input and fetched exercises, and sends it to **Amazon Bedrock**
-- **Claude Sonnet** generates a personalized workout plan, which Lambda returns to the frontend for display 
+- The request triggers the AWS Lambda function, which calls the ExerciseDB API from RapidAPI to fetch relevant exercises
+- Lambda constructs a prompt from the user input and fetched exercises, and sends it to Amazon Bedrock
+- Claude Sonnet generates a personalized workout plan, which Lambda returns to the frontend for display 
 
 ## :open_file_folder: PROJECT FILE STRUCTURE
 ```bash
